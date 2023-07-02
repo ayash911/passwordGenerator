@@ -1,4 +1,5 @@
 import random
+import pyperclip
 
 sletters = "abcdefghijklmnopqrstuvwxyz"
 bletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -20,7 +21,10 @@ def passgen():
             password += num[random.randint(0,9)]
         if x == 4:
             password += special[random.randint(0,29)]
+    pyperclip.copy(password)
+    print('The password has been copied to the clipboard.')
     return password
+
 
 while ans.lower() == "y":
     print(passgen())
